@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Gnchos De Ciclo De Vida</title>
+        <script src="https://unpkg.com/vue"></script>
+    </head>
+    <body>
+        <div id="vm">
+            <h3>{{ mensaje }}</h3>
+            <button v-on:click="mensaje = 'Este es el nuevo mensaje'">Cambiar Mensaje</button>
+            <button v-on:click="destruir">Destruir Instancia</button>
+        </div>
+        <script src="./vue/codevue.js"></script>
+    </body>
+</html>
