@@ -1,6 +1,14 @@
 new Vue({
-    el: '#vm',
+    el: '#eventos',
     data: {
-        paises: ['Mexico','España','Colombia']
+        contador: 0
+    },
+    methods: {
+        sumarUno: function(){
+            this.contador += 1;
+        },
+        restarUno: function(){
+            this.contador -=1;
+        }
     }
 })

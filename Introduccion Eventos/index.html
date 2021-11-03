@@ -5,15 +5,11 @@
         <script src="https://unpkg.com/vue"></script>
     </head>
     <body>
-        <div id="vm">
-                <ul>
-                    <litemplate v-for="pais in paises">
-                        <li>
-                        {{ pais }}
-                    </li>
-                    <hr />
-                </template>
-                </ul>
+        <div id="eventos">
+            <button v-on:mouseEnter="sumarUno">Sumar Uno</button>
+            <button v-on:click="restarUno">Restar Uno</button>
+            <hr>
+            {{ contador }}
         </div>
         <script src="./vue/codevue.js"></script>
     </body>
