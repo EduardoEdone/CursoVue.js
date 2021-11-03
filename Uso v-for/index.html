@@ -1,17 +1,16 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Condicionales</title>
+        <title>Loops</title>
         <script src="https://unpkg.com/vue"></script>
     </head>
     <body>
         <div id="vm">
-            <div v-show='mostrar'>
-                <h3>Titulo</h3>
-                <p>Parrafo</p>
-                Este Es El Primer Parrafo
-            </div>
-            <div>Este Es El Segundo Div</div>
+                <ul>
+                    <li v-for="pais in paises">
+                        {{ pais.nombre }}
+                    </li>
+                </ul>
         </div>
         <script src="./vue/codevue.js"></script>
     </body>

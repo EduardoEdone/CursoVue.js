@@ -1,6 +1,7 @@
-new Vue ({
+new Vue({
     el: '#vm',
     data: {
-        mostrar: true
+        paises: [
+            {nombre: 'Mexico'}, {nombre: 'España'}, {nombre: 'Colombia'}]
     }
 })
