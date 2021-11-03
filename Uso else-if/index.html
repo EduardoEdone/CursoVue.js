@@ -6,12 +6,10 @@
     </head>
     <body>
         <div id="vm">
-            <template v-if='mostrar'>
-                <h3>Titulo</h3>
-                <p>Parrafo</p>
-                Este Es El Primer Div
-            </template>
-            <div v-else>Este Es El Segundo Div</div>
+            <div v-if='parrafo ==1'>Este Es El Primer Parrafo</div>>
+            <div v-else-if= 'parrafo ==2'>Este Es El Segundo Parrafo</div>
+            <div v-else-if= 'parrafo ==3'>Este Es El Tercer Parrafo</div>
+            <div v-else>Parrafo no es ni 1 ni 2 ni 3</div>
         </div>
         <script src="./vue/codevue.js"></script>
     </body>
