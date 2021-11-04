@@ -23,19 +23,7 @@ crossorigin="anonymous"></script>
     <body class="container">
         <div id="app" class="jumbotron">
             <titulo></titulo>
-            <div class="input-group">
-            <input type="text"
-                placeholder="Escribe Una Nueva Tarea" 
-                v-model="nuevaTarea"
-                class="form-control"
-                @keyup.enter="agregarTarea">
-            <span class="input-group-btn">
-                <button type="button" 
-                @click="agregarTarea" 
-                class="btn btn-primary">Agregar Tarea</button>
-            </span>
-
-        </div>
+            <nueva-tarea></nueva-tarea>
             <ul class="list-group">
                 <li v-for="(tarea, indice) of tareas" class="list-group-item" :class="{terminada: tarea.terminada}">
                     {{tarea.texto}}
