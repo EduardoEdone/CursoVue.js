@@ -8,6 +8,9 @@ new Vue ({
         mostrarUbicacion: function(evento){
             this.x = evento.clientx;
             this.y = evento.clientY;
+        },
+        sumar: function(cantidad) {
+            this.contador += cantidad;
         }
     }
 })

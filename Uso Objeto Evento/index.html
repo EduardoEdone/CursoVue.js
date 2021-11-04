@@ -6,10 +6,11 @@
     </head>
     <body>
         <div id="eventos">
-            <div style="height: 300px"
-            v-on:mousemove="mostrarUbicacion">
+            <div style="height: 300px; border: 1px solid blue;"
+            v-on:mousemove="mostrarUbicacion"
+            v-on:click="sumar(3)">
             </div>>
-            x: {{x}}, y: {{y}}
+            x: {{x}}, y: {{y}}, contador: {{contador}}
         </div>
         <script src="./vue/codevue.js"></script>
     </body>
