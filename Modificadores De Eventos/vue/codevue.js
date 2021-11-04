@@ -2,11 +2,12 @@ new Vue ({
     el: '#eventos',
     data: {
         x: 0,
-        y: 0
+        y: 0,
+        contador: 0
     },
     methods: {
         mostrarUbicacion: function(evento){
-            this.x = evento.clientx;
+            this.x = evento.clientX;
             this.y = evento.clientY;
         },
         sumar: function(cantidad) {
