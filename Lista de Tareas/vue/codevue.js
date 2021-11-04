@@ -5,15 +5,15 @@ new Vue ({
         tareas: [
             {
                 texto: 'Aprender Vue.js',
-                terminar: false
+                terminada: false
             },
             {
                 texto: 'Aprender Angular 2',
-                terminar: false
+                terminada: false
             },
             {
                 texto: 'Aprender Ionic 2',
-                terminar: false
+                terminada: false
             }
         ],
         nuevaTarea: ''
@@ -24,10 +24,13 @@ new Vue ({
             if (texto) {
                 this.tareas.push ({
                     texto: texto,
-                    terminar: false
+                    terminada: false
                 })
             }
             this.nuevaTarea ='';
+        },
+        borrar: function (indice){
+            this.tareas.splice(indice, 1);
         }
     }
 })
