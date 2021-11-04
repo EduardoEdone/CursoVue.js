@@ -1,7 +1,13 @@
-new Vue ({
+Vue.component('titulo', {
+    template: '<h2>{{titulo}}</h2>',
+    data: function(){
+        return {titulo: '-Lista De Tareas-'}
+    }
+})
+
+var app = new Vue ({
     el: '#app',
     data: {
-        titulo: 'Lista De Tareas',
         tareas: [
             {
                 texto: 'Aprender Vue.js',
