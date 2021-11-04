@@ -15,7 +15,8 @@ new Vue ({
                 texto: 'Aprender Ionic 2',
                 terminar: false
             }
-        ]
+        ],
+        nuevaTarea: ''
     },
     methods: {
 
