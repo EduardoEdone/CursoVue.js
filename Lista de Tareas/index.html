@@ -23,6 +23,7 @@ crossorigin="anonymous"></script>
         <div id="app">
             {{titulo}}
             <input type="text" placeholder="Escribe Nueva Tarea" v-model="nuevaTarea">
+            <button type="button" @click="agregarTarea">Agregar Tarea</button>
             <ul>
                 <li v-for="tarea of tareas">
                     {{tarea.texto}}

@@ -19,6 +19,15 @@ new Vue ({
         nuevaTarea: ''
     },
     methods: {
-
+        agregarTarea: function() {
+            var texto = this.nuevaTarea.trim();
+            if (texto) {
+                this.tareas.push ({
+                    texto: texto,
+                    terminar: false
+                })
+            }
+            this.nuevaTarea ='';
+        }
     }
 })
