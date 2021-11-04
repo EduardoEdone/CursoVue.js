@@ -19,13 +19,20 @@ crossorigin="anonymous"></script>
     
 <script src="https://unpkg.com/vue"></script>
     </head>
-    <body>
-        <div id="app">
-            {{titulo}}
-            <input type="text" placeholder="Escribe Nueva Tarea" v-model="nuevaTarea">
-            <button type="button" @click="agregarTarea">Agregar Tarea</button>
-            <ul>
-                <li v-for="tarea of tareas">
+    <body class="container">
+        <div id="app" class="jumbotron">
+            <h2>{{titulo}}</h2>
+            <div class="input-group">
+            <input type="text"
+            placeholder="Escribe Nueva Tarea" 
+            v-model="nuevaTarea"
+            class="form-control">
+            <span class="input-group-btn">
+                <button type="button" @click="agregarTarea" class="btn btn-primary">Agregar Tarea</button>
+            </span>
+        </div>
+            <ul class="list-group">
+                <li v-for="tarea of tareas" class="list-group-item">
                     {{tarea.texto}}
                 </li>
             </ul>
