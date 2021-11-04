@@ -40,6 +40,7 @@ Vue.component('nueva-tarea', {
 data: function() {
     return data;
 },
+
 methods: {
     agregarTarea: function() {
         var texto = this.nuevaTarea.trim();
@@ -54,12 +55,35 @@ methods: {
 }
 })
 
+Vue.component('lista-de-tareas', {
+    template: `<ul class="list-group">
+    <li v-for="(tarea, indice) of tareas" class="list-group-item" :class="{terminada: tarea.terminada}">
+        {{tarea.texto}}
+        <span class="pull-right">
+            <button type="button" class="btn btn-success btn-xs glyphicon glyphicon-ok"
+            @click="tarea.terminada = !tarea.terminada">
+            </button>
+            <button type="button" class="btn btn-danger btn-xs glyphicon glyphicon-remove"
+            @click="borrar(indice)">
+            </button>
+        </span>
+    </li>
+</ul> `,
+
+data: function() {
+    return data;
+},
+methods: {
+    borrar: function (indice){
+        this.tareas.splice(indice, 1)
+    }
+}
+})
+
 var app = new Vue ({
     el: '#app',
     data:data,
     methods: {
-        borrar: function (indice){
-            this.tareas.splice(indice, 1);
-        }
+
     }
 })

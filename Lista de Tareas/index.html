@@ -24,19 +24,7 @@ crossorigin="anonymous"></script>
         <div id="app" class="jumbotron">
             <titulo></titulo>
             <nueva-tarea></nueva-tarea>
-            <ul class="list-group">
-                <li v-for="(tarea, indice) of tareas" class="list-group-item" :class="{terminada: tarea.terminada}">
-                    {{tarea.texto}}
-                    <span class="pull-right">
-                        <button type="button" class="btn btn-success btn-xs glyphicon glyphicon-ok"
-                        @click="tarea.terminada = !tarea.terminada">
-                        </button>
-                        <button type="button" class="btn btn-danger btn-xs glyphicon glyphicon-remove"
-                        @click="borrar(indice)">
-                        </button>
-                    </span>
-                </li>
-            </ul>
+            <lista-de-tareas></lista-de-tareas>
         </div>
         <script src="./vue/codevue.js"></script>
     </body>
