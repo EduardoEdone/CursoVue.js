@@ -28,7 +28,7 @@ export default {
 
 <style>
     .terminada {
-    color: gray;
+    color: cyan;
     text-decoration: line-through;
 }
 </style>

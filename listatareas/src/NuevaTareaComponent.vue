@@ -14,13 +14,14 @@
 </template>
 
 <script>
+import {bus} from './main'
 export default {
     data () {
         return {
             nuevaTarea: ''
         }
     },
-    props: ['tareas'],
+    props: ['tareas', 'actualizarContador'],
     methods: {
         agregarTarea(){
             var texto = this.nuevaTarea.trim();
@@ -29,9 +30,15 @@ export default {
                     texto: texto,
                     terminada: false
                 })
+
+                //this.actualizarContador();
+                bus.actualizarContador(this.tareas.length)
             }
             this.nuevaTarea='';
         }
+    },
+    created(){
+        bus.$emit('actualizarContador', this.tareas.length)
     }
 }
 </script>
