@@ -3,7 +3,7 @@
     <div class="jumbotron">
       <titulo :titulo="titulo"></titulo>
       <nueva-tarea :tareas="tareas"></nueva-tarea>
-      <lista-tarea :tareas="tareas"></lista-tarea>
+      <lista-tareas :tareas="tareas"></lista-tareas>
     </div>
   </div>
 </template>
@@ -11,7 +11,7 @@
 <script>
 import ListaTareas from './ListaTareasComponent.vue'
 import NuevaTarea from './NuevaTareaComponent.vue'
-import Titulo from './TituloCompinent.vue'
+import Titulo from './TituloComponent.vue'
 
 export default {
   components: {
@@ -21,7 +21,7 @@ export default {
   },
   data () {
     return {
-      titulo : '* Lista De Tareas *',
+      titulo : "* Lista De Tareas *",
       tareas: [
         {
             texto: 'Aprender Vue.js',

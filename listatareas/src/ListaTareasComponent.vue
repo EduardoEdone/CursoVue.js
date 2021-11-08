@@ -1,7 +1,7 @@
 <template>
    <ul class="list-group">
     <li v-for="(tarea, indice) of tareas" class="list-group-item"
-    :class="{terminada: tarea.terminada}">
+    :class="{terminada: tarea.terminada}" :key="indice">
         {{tarea.texto}}
         <span class="pull-right">
             <button type="button" class="btn btn-success btn-xs glyphicon glyphicon-ok"
@@ -17,7 +17,12 @@
 
 <script>
 export default {
-    props: ['tareas']
+    props: ['tareas'],
+    methods: {
+        borrar (indice) {
+           this.tareas.splice(indice, 1);
+        }
+    }
 }
 </script>
 
