@@ -35,6 +35,11 @@ export default {
                 bus.actualizarContador(this.tareas.length)
             }
             this.nuevaTarea='';
+            this.$http.post('',
+            {
+                texto:texto,
+                terminada: false
+            }).then(respuesta => console.log(respuesta));
         }
     },
     created(){
