@@ -5,7 +5,7 @@
         {{tarea.texto}}
         <span class="pull-right">
             <button type="button" class="btn btn-success btn-xs glyphicon glyphicon-ok"
-            @click="tarea.terminada = !tarea.terminada">
+            @click="estado(indice)">
             </button>
             <button type="button" class="btn btn-danger btn-xs glyphicon glyphicon-remove"
             @click="borrar(indice)">
@@ -19,8 +19,21 @@
 export default {
     props: ['tareas'],
     methods: {
+        estado(indice) {
+            terminada = this.tareas[indice].terminada = !this.tareas[indice].terminada;
+            let id = this.tareas[indice].id;
+
+            this.$http.patch('tar/' + id + '.json',
+            {
+                terminada: terminada
+            }).then(respuesta => {console.log(respuesta)})
+        },
         borrar (indice) {
-           this.tareas.splice(indice, 1);
+            let id = this.tareas[indice].id;
+           this.tareas.splice(indice, 1)
+
+           this.$http.delete('tar/' + id + '.json')
+           .then(respuesta => {console.log(respuesta)})
         }
     }
 }

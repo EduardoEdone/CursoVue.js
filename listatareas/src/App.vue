@@ -32,14 +32,19 @@ export default {
     }
   },
   created() {
-    this.$http.get('')
+    this.$http.get('tar.json')
                 .then(respuesta => {
                   return respuesta.json();
                 })
                 .then(respuestaJson => {
                   for(let id in respuestaJson)
                   {
-                    this.tareas.push(respuestaJson[id]);
+                    let tarea = {
+                      id:id,
+                      texto: respuestaJson[id].texto,
+                      terminada: respuestaJson[id].terminada
+                    }
+                    this.tareas.push(tarea);
                   }
                 })
   }

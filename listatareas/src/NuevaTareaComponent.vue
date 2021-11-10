@@ -35,7 +35,7 @@ export default {
                 bus.actualizarContador(this.tareas.length)
             }
             this.nuevaTarea='';
-            this.$http.post('',
+            this.$http.post('tar.json',
             {
                 texto:texto,
                 terminada: false
